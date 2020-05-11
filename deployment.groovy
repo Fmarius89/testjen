@@ -9,7 +9,7 @@ node("master"){
         }
        stage("Test the URL){
                 try{
-                        def output = sh script: "http://marius-lb-491722137.eu-west-1.elb.amazonaws.com/", returnStdout: true
+                        def output = sh script: "curl http://marius-lb-491722137.eu-west-1.elb.amazonaws.com/", returnStdout: true
                         println "Output message is: "+output
                         if(output.contains("awesome")){
                                 println "Ok i found it!!!!"
