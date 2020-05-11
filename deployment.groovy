@@ -7,7 +7,7 @@ node("master"){
                 sh "docker rm -f nginxfrontend"
                 sh "docker run -d --name nginxfrontend -p 80:80 nginxfrontend:$BUILD_NUMBER"
         }
-       stage("Test the URL){
+       stage("Test the URL"){
                 try{
                         def output = sh script: "curl http://marius-lb-491722137.eu-west-1.elb.amazonaws.com/", returnStdout: true
                         println "Output message is: "+output
