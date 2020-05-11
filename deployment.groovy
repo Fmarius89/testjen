@@ -23,4 +23,4 @@ node("master"){
                         sh "exit 1"
                 }
         }
-}
+
