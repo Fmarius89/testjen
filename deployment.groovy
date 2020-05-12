@@ -1,6 +1,5 @@
 node("master"){
         stage("Build image"){
-                println $WORSPACE
                 sh "docker build $WORKSPACE@script/src/ -t nginxfrontend:$BUILD_NUMBER"
                 
         }
