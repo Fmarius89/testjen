@@ -1,6 +1,6 @@
 node("master"){
         stage("Build Image") {
-                sh "cd testjen/src && git pull && docker build  -t nginxfrontend:$BUILD_NUMBER ."
+                sh "cd /tmp && git clone https://github.com/Fmarius89/testjen.git && cd /testjen/src && docker build  -t nginxfrontend:$BUILD_NUMBER ."
                 
         }
         stage("Deploy to DEV"){
