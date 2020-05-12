@@ -1,6 +1,6 @@
 node("master"){
         stage("Build image"){
-                sh "docker build $WORKSPACE@script/src/ -t nginxfrontend:$BUILD_NUMBER ."
+                sh "docker build $WORKSPACE@script/src/ -t nginxfrontend:$BUILD_NUMBER"
                 
         }
         stage("Deploy to DEV"){
